@@ -1,43 +1,45 @@
 package Exception;
 import java.util.Scanner;
 public class Nested_try {
+	// global variable
 	int num1,numn2,res,num2;
 	Scanner sc=new Scanner(System.in);
-	public static void main(String[] args) 
+	
+	Nested_try() // constructor
 	{
-		// TODO Auto-generated method stub
-		Nested_try obj=new Nested_try();
-	}
-
-	Nested_try()
-	{
-		try
+		try // try block to taking an exception
 		{
-			System.out.println("Enter two numbers");
+			System.out.println("Enter two numbers"); // taking a two no from user
 			num1=sc.nextInt();
 			num2=sc.nextInt();
 		
-			res=num1/num2;
-			System.out.println("The div is="+res);
-			try
+			res=num1/num2; // division a no here
+			System.out.println("The div is="+res); // printing a result here
+			try // nested try block
 			{
-				String demo=null;
+				String demo=null; 
 				System.out.println("Lenght="+demo.length());
 			}
-			catch(Exception e)
+			catch(Exception e) // catching an exception
 			{
 				System.out.println("MSG="+e.getMessage());
 			}
 		}
-		catch(ArithmeticException ae)
+		catch(ArithmeticException ae) // arithmethmetic exception is catched here only
 		{
 			System.out.println("The second no cannot be zero");
 		}
-		finally 
+		finally  // finally block run here
 		{
 			System.out.println("This is my finally block :)");
 			
 		}
 		
+	}
+	
+	public static void main(String[] args) // main method
+	{
+		// TODO Auto-generated method stub
+		Nested_try obj=new Nested_try();
 	}
 }
